@@ -1,0 +1,882 @@
+
+body
+{
+	background: rgb(29,29,38);
+	font-family: 'Source Sans Pro', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: 300;​
+	outline: none !important;
+}
+.redar-menu
+{
+	padding: 0px !important;
+}
+.p-message:hover
+{
+	text-decoration: none !important;
+}
+.p-message:focus
+{
+	border:none !important;
+}
+.menu-relative{
+	width:11.2% !important;
+	float:left;
+	
+}
+/*
+.container
+{
+	border: solid 1px green;
+}
+
+EMPIEZAN EL CSS DE LASECCION E
+*/
+
+.type, .required, .minlength
+{
+	color:#00BA87 !important;
+}
+input:focus
+{
+	border: solid 2px #00BA87 !important;
+	box-shadow:solid 3px #00ba87 !important;
+}
+.nav
+{
+	background-color: #272733;
+	/*box-shadow: 0 2px 2px rgba(0,0,0,.5);*/
+	opacity:0.8;
+	height:auto;
+}
+.all-menu
+{
+	opacity: 2 !important;
+}
+a:link {
+	font-family: "Helvetica Neue";
+	text-decoration: none;
+}
+a:hover
+{
+	color: #00af85;
+	font-family: "Helvetica Neue";
+	text-decoration: none;
+	text-shadow: 0 1px 1px rgba(3,3,3,.8);
+	background:none !important;	
+}
+.redar-menu a:hover
+{
+	color:green !important;
+	border-bottom:solid 2px #00c189 !important;
+}
+.redar-menu a:focus
+{
+	color:green !important;
+	background:none !important;
+	border-bottom:solid 2px #00c189 !important;
+}
+
+a:focus
+{
+	color:green !important;
+	background:none !important;
+	border-bottom:solid 2px #00c189 !important;
+	
+}
+
+
+
+.menu-about
+{
+	opacity: 0.9 !important;
+}
+.E-image
+{
+	margin-left: 4em;
+}
+.navbar-inner
+{
+	border: none;
+
+}
+
+
+
+.menu-about
+{
+	position:relative;
+	left:16.5%;
+}
+.menu-blee
+{
+	position:relative;
+	left:19.5%;
+}
+.span6
+{
+	margin-left: 0px !important;
+}
+.menu-dashboard
+{
+	position:relative;
+	left:18%;
+}
+
+.menu-purchase
+{
+	position:relative;
+	left:21.5%;
+	
+}
+.menu-get
+{
+	position:relative;
+	left:23.5%;
+}
+.redar-menu
+{
+	z-index: 3;
+	/*background:none !important;*/
+	/*position:fixed;*/
+}
+.redar-menu a
+{
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-size: 1.125em;
+	color:#fff;
+}
+.nav
+{
+	width:100%;
+	z-index:3;
+	/*box-shadow: 1px 1px 2px 1px black;*/
+	background-color:none;
+}
+.texttops
+{
+	margin-top:1em;
+}
+.menu-home
+{
+	left:15%;
+	position:relative;	
+}
+.pading-imaleft
+
+{
+	padding-left:7px;
+}
+.tmicon
+{
+	font-size:.8em;
+}
+.landing-pointer {
+	cursor: pointer !important;
+}
+.landing-footer {
+	margin-top: 0px;
+	margin-bottom: 40px;
+	text-align:center;
+	color: #FFFFFF;
+}
+.landing-footer a {
+	color: #00c189;
+}
+/* About */
+.border-bottom
+{
+ border-bottom: solid 1px black;
+}
+.about-text2
+{
+	margin-top:1em;
+}
+
+.about-final
+{
+	font-family: 'Source Sans Pro', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-size:0.9em;
+	line-height:7em;
+	color: #00BA87;	
+	font-weight: bold;
+	margin-left:0px !important;
+	
+}
+.about-subtitle
+{
+	font-family: 'Source Sans Pro', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-size:2.4em;
+	line-height:1.5em;
+	color: #00BA87;
+}
+.about-titles
+{
+	
+	line-height:1em;
+}
+.appstore-img
+{
+	margin-left:4em !important;
+}
+
+
+.about-img1
+{
+	
+	    background-image:url(../images/A/bg.png);  
+    	position:relative;
+    	z-index:0;
+
+}
+.fondo-1
+{
+	position:absolute;
+	z-index:-1;
+	height:43em;
+}
+.about-text-avalible
+{
+	font-family: 'Source Sans Pro', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-size:75%;
+	color:#00c189;
+}
+.about-cambiante
+{
+	text-align: center;
+}
+.about-espaciadora-person
+{
+	height:6.3em;
+}
+.espaciador
+{
+	height:100px;
+}
+.redar-logo
+{
+
+	
+	margin-left: 0px !important;
+
+
+}
+.about-person
+{
+	margin-left: 0px !important;
+	
+	
+}
+.container-about
+{
+	
+	/*position:relative;
+	z-index: 1;*/
+	padding-top:9em;
+}
+.about-text
+{
+	
+	font-family: 'Source Sans Pro', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-size: 2em;
+	color:#00C189;
+	line-height: 1.2em;
+
+}
+.about-images
+{
+	margin-top:50px;
+	text-align: right;
+}
+.img-marginleft
+{
+	margin-left:3.5em !important;
+}
+.margin-imag
+{
+	margin-left:7px !important;
+}
+
+.plans_image{
+	padding-left: 13.6%;
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+	.plans_image{
+		padding-left: 14.6%;
+	}
+}
+
+@media (min-width: 1001px) and (max-width: 1024px) {
+	.plans_image{
+		padding-left:14.6%;
+	}
+}
+
+@media (min-width: 975px) and (max-width: 1000px) {
+	.plans_image{
+		padding-left:14.6%;
+	}
+}
+
+@media (min-width: 600px) and (max-width: 974px) {
+	.plans_image{
+		padding-left:16.2%;
+	}
+	
+}
+@media screen and (max-width: 760px) 
+ {
+ 	html{
+ 		text-align: center;
+ 	}
+ 	body,html{
+ 		/*padding-left: 0px !important;
+ 		padding-right: 0px !important;
+ 		margin: 0px !important;
+ 		padding: 0px !important;*/
+ 	}
+ 	.appstore-img{
+ 		text-align: center;
+ 		margin-left: 0em !important; 
+ 	}
+ 	.about-text{
+ 		margin-left: 2em !important;
+ 	}
+ }
+
+@media screen and (max-width: 1024px) 
+ {
+ 	.about-images{
+	margin-top:50px;
+	text-align: right;
+	}
+ }
+@media screen and (max-width: 940px)
+{
+
+	width:30em;
+	padding-left:13%;
+}
+
+.landing-hide
+{
+	opacity:0.0;
+	z-index:5;
+	position:relative;
+}
+
+/* Blee*/
+
+
+.text-pasos
+{
+	margin-left: 2em;
+
+}
+
+.text-medio
+{
+	color:#E4E4E4;
+	line-height: 1.4em ;
+	font-size: 131%;
+}
+.text-fila3
+{
+	margin-top:.6em;
+	color:#00BA87;
+	line-height: 1.4em;
+	font-family: 'Source Sans Pro', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size: 1.2em;
+}
+.espaciador-blee
+{
+height: 8em;
+}
+.blee-tittle
+{
+	font-family: 'Source Sans Pro', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size: 200%;
+	color:#ffffff;
+	
+	
+}
+.blee-text-fila2
+{
+	font-family: 'Source Sans Pro', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size:140%;
+	color:#ffffff;
+	line-height:2em;
+}
+h1
+{
+	margin-bottom: 0px !important;
+}
+.blee-textall
+{
+	margin-top:7em;
+}
+
+.container-blee
+{
+	
+	margin-top:.25em !important;
+}
+.espaciador-1
+{
+	height:2%;
+}
+.container
+{
+	
+}
+
+.image-1
+{
+	margin-left:5em;
+}
+.image-cel
+{
+	margin-left:10em;
+}
+.location-text
+{
+	color: #272833;
+	line-height:1.4em;
+	font-size:1.2em;
+}
+/* dashboard */
+
+.images-dash
+{
+	
+}
+.espaciador-dash
+{
+	height:100px;
+}
+.text-cursive
+{
+	font-size:87.5%;
+ color:#F0EFED;
+ font-style:italic;
+}
+
+
+.text-dashall li
+{
+	
+	line-height: 2em !important;
+}
+.dash-image1
+{
+	margin-left: 5.8em;
+	
+}
+.dash-image2
+{
+	margin-top:90px;
+	margin-left:8.5em;
+}
+.container-dashboard
+{
+	
+}
+.titles
+{
+	font-family: 'Source Sans Pro', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size:162.5%;
+	color:#00BA87;
+	margin-top:1em;
+	line-height: 1.3em;
+}
+.text
+{
+	font-family: 'Source Sans Pro', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size:120%;
+	color:#F0EFED;
+	line-height: 1.3925em;
+}
+
+
+/*Dashboard 2 */
+.d-image
+{
+	 margin-left: 113px !important;
+}
+.images
+{
+	 margin-left: 113px;
+	 }
+.textall-dash2
+{
+	margin-top: 5em;
+}
+.title-dash2
+{
+	font-family: 'Source Sans Pro', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size: 162.5%;
+	color: #FFFFFF;
+	
+	
+}
+.text-business
+{
+	font-family: 'Source Sans Pro', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size: 120%;
+	color:#272833;
+	line-height: 1.31em;
+	margin-top:0.6em;
+}
+.dashboard2all
+{
+	background:rgb(20,151,101);
+	border-bottom: solid 1px black;
+}
+.dashboardground
+{
+	background:rgb(20,151,101);
+	
+}
+.text-dash2
+{
+	font-family: 'Source Sans Pro', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size: 120%;
+	color:#272833;
+	line-height: 1.31em;
+	margin-top:0.9em;
+}
+
+.text-dash3
+{
+	font-family: 'Source Sans Pro', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size: 120%;
+	color:#272833;
+	line-height: 1.31em;
+	margin-top:1.3em;
+}
+.text-dash4
+{
+	font-family: 'Source Sans Pro', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size: 120%;
+	color:#272833;
+	line-height: 1.31em;
+	margin-top:1.3em;
+}
+.sub-title-dash2
+{
+	font-family: 'Source Sans Pro', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size: 162.5%;
+	color: #ffffff;
+	line-height: .7em;
+	margin-top:1.2em;
+}
+.E-images
+{
+	margin-left:4em;
+}
+.li-business
+{
+	margin-left:2em;
+	color:#272833;
+	font-size: 120%;
+	margin-top:1em;
+}
+/* Dispositivos */
+
+@media (min-width: 768px) and (max-width: 970px) { 
+	.mujerimg
+	{
+		height: 30em;
+    	padding-left: 15.5%;
+	}
+	
+	a:focus
+	{
+		color:green !important;
+	}
+	a:hover
+	{
+		color:green !important;
+		font-weight: bold;
+	}
+	.about-text
+	{
+		font-size:2em;
+	}
+	
+	.nav
+	{
+		position:fixed;
+	}
+	.image-1
+	{
+		margin-top:23px;
+		margin-left:0px;
+	}
+	.c-image
+	{
+		margin-top:0px;
+	}
+	.dash-image1 {
+		margin-left: .5em;
+	}
+	.ipad-titles
+	{
+		font-size: 1.2em;
+	}
+	.ipad-text
+	{
+		font-size:1.1em;
+	}
+	.d-image
+	{
+		margin-left: 3em !important;
+	}
+	.E-image
+	{
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+	.E-images
+	{
+		margin-top:.625em;
+		margin-left: 0px;
+	}
+	.purchase-image
+	{
+	 	margin-left:.46875em;
+	}
+	.title-purchase
+	{
+		font-size: 2em;
+	}
+	.blee-image1ipad
+	{
+	 	margin-top: 0px;
+	}
+
+	 .ipad-imglocation
+	{
+		padding-right:70px !important;
+	}
+	
+}
+@media (min-width: 961px) and (max-width: 980px) {
+	.mujerimg
+ 	{
+ 		height: 30em !important;
+    	padding-left: 15.6% !important;
+ 	}
+}
+
+@media (min-width: 980px) and (max-width: 1023px) {
+	.mujerimg
+ 	{
+ 		padding-left:3% !important; 
+ 
+ 	}
+}
+
+
+
+@media (min-width: 1024px) and (max-width: 1200px) 
+ {
+ 	.mujerimg
+ 	{
+ 		padding-left:3% !important; 
+ 	}
+
+ }
+@media screen and (max-width: 768px) {
+	.about-img1
+	 {
+	 	background-position:-470px center;
+	 	height:675px;
+	 }
+}
+@media (min-width: 1001px) and (max-width: 1023px) {
+	.mujerimg
+ 	{
+ 		padding-left:4% !important; 
+ 	}
+}
+
+/* Get in Touch */
+
+.comments-input
+{
+	text-align:left !important;
+}
+.gets-inputstexts
+{
+		height:2.3em !important;
+	
+}
+.get-input
+{
+	
+	
+	background:#00c189;
+	height:3em;
+	font-weight: bold;
+	border:none;
+	
+}
+.get-input:hover
+{
+	opacity:0.7;
+}
+.get-textinput
+{
+	
+	width:25em;
+
+}
+.get-text
+{
+	color:#00c189;
+}
+.container-get
+{
+	background: rgb(29,29,38);
+}
+.get-intouch
+{
+	height:42em;
+}
+.get
+{
+	margin-top:7.5em;
+}
+.get-final
+{
+	margin-top:3em;
+}
+.location-img
+{
+	margin:20px !important;
+}
+
+/*Modal */
+
+.modal-logo
+{
+		margin-left: 2em;	  	
+    
+    	
+}
+.m-size
+{
+	width:33.125em !important;
+}
+.modal-spans
+{
+	margin-left: 0px !important;
+}
+.modal-close
+{
+	
+}
+.modal-head-border
+{
+	border-bottom: solid .0625em black !important;
+}
+.modal-msg
+{
+	color:gray;
+	text-align:center;
+}
+.modal-input
+{
+	width:25em;
+	height:4em !important;
+}
+.modal-submit
+{
+	width:26em;
+	height:4.7em;
+	
+}
+.modal-text-all 
+{
+	text-align:center !important;
+}
+/* Purchase */
+
+.title-purchase
+{
+	text-align: center;
+	font-size: 250%;
+	font-weight: bold;
+}
+.sub-title-purchase
+{
+	text-align: center;
+	font-size: 170%;
+	line-height: 2.3em;
+}
+.container-purchase
+{
+	
+	margin-left: 0px !important;
+}
+.purchase-all
+{
+	background:rgb(214,215,218);
+}
+.purchase-image
+{
+	margin-left: 4.5em;
+}
+
+.margin-imag
+{
+	margin-left:7px !important;
+}
+
+/* Test */
+/*
+.span6
+{
+	border: solid 1px green !important;
+}
+.container {
+	background:gray;
+}
+.span1
+{
+	background
+}
+.span2
+{
+	background:red;
+	
+}
+.span7
+{
+	background:orange;
+}
+.span5
+{
+	background:blue;
+}
+.span10
+{
+	background:yellow;
+}
+.span6
+{
+	background: rgb(29,29,38);
+}
+.span3
+{
+	background:black;
+}
+.span9
+{
+	background:gray;
+}
+.span3
+{
+	background:purple;
+}*/

@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> -->
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+	<title>¡Welcome to Redar Page!</title>
+    <link rel="shortcut icon" href="https://redar.clai.mx/assets/Logotipo2.png" />
+	<meta name="author" content="hello@redarapp.com">
+	<meta name="keywords" content="redar app,clients,promotions,restaurants,specialties,rewards,foodtrock,food,clai,clarity">
+	<meta name="description" content="Redar the new way to know and be in touch with your clients Redar the new way to know and be in touch with your clients">
+
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	
+	<script src="js/jquery.flexnav.min.js"></script>
+	
+	
+	<script type="text/javascript" src="js/js.js"></script>
+	<script type="text/javascript" src="js/jquery.stellar.min.js"></script>
+	<script type="text/javascript" src="js/waypoints.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="js/parsley.js"></script>
+	
+	
+
+
+	<!-- CSS MAIN LANDING PAGE -->
+
+	<!-- CSS FOR BOOTSTRAP -->
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-responsive.css">
+	
+	<!-- CSS FOR ALL LANDING PAGE -->
+	<link rel="stylesheet" href="css/flexnav.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css" media="all"/>
+	<!-- <link rel="stylesheet" type="text/css" href="css/responsivemobilemenu.css" media="all"/> -->
+
+
+	<!--END CSS MAIN -->
+
+	<script  type="text/javascript">
+		imagenOn = new Image(60,60);
+		imagenOn.src = "../landing-page/images/A/btn_09.png";
+
+		// Empieza java script de purchase para cambiar la imagen
+		var estado = false;
+
+		imagenClick = new Image(60,60);
+		imagenClick.src = "images/F/gold_h.png";
+
+		imagenClick2 = new Image(60,60);
+		imagenClick2.src = "images/F/platinum_h.png";
+
+		imagenClick3 = new Image(60,60);
+		imagenClick3.src = "images/F/diamond_h.png";
+
+		function pulsar( )
+		{
+			var ejemplo4 = document.getElementById('ejemplo5');
+			ejemplo3.src = imagenClick.src;
+			estado = true;
+		}
+
+		function pulsar2( )
+		{
+			var ejemplo4 = document.getElementById('ejemplo4');
+			ejemplo4.src = imagenClick2.src;
+			estado = true;
+		}
+
+		function pulsar3( )
+		{
+			var ejemplo4 = document.getElementById('ejemplo5');
+			ejemplo5.src = imagenClick3.src;
+			estado = true;
+		}
+
+		function SaveContactoValidacion()
+		{
+			if ($('#form_contacto').parsley("validate"))
+			{
+				SaveContacto();
+			}
+		}
+
+		function SaveContactoValidacionapp()
+		{
+			if ($('#form_app').parsley("validate"))
+			{
+				Saveapp();
+			}
+		}
+
+		function SaveContacto()
+		{
+			var data = $('#form_contacto').serialize();
+			method = "GET";
+				
+			$.ajax ({
+				url : "https://redar.clai.mx/api/web_site/contact",
+				type: method,
+				dataType: "jsonp",
+				timeout: 8000,
+				data : data,
+				success: function(data, textStatus, jqXHR) {
+
+					if (data.success == 1) {
+	    				$('#popover1').popover('show');
+						document.getElementById("form_contacto").reset();
+						setTimeout(function() {
+							$('#popover1').popover('destroy')
+						}, 2000);
+					} 
+					else {
+						alert(data.message);
+					}
+				},
+				failure: function (jqXHR, textStatus, errorThrown) {
+						alert("ERROR "+textStatus);
+				}
+			});
+		}
+
+		function Saveapp() {
+
+			method = "GET";
+			var data = $('#form_app').serialize();
+			
+			$.ajax ({
+				url : "http://redar.clai.mx/api/web_site/app_reminder_android",
+				type: method,
+				dataType: "jsonp",
+				timeout: 8000,
+				data : data,
+				success: function(data, textStatus, jqXHR) {
+					if (data.success == 1) 
+					{
+						$(function () {
+							document.getElementById("form_contacto").reset();
+							$('#correo').removeClass("landing-hide");
+							$('#app_modal').modal('hide');
+
+							setTimeout(function() {
+								$('#correo').addClass("landing-hide");
+							}, 3500);
+						});
+					} 
+					else {
+			     		alert(data.message);
+			        }
+		         	},
+		         	failure: function (jqXHR, textStatus, errorThrown) {
+					alert("ERROR "+textStatus);
+				}
+			});
+		}
+
+		function Referrals(){
+			window.open("http://redar.clai.mx/waiters/new", '_blank');
+		}
+
+		function GoApp(){
+			window.open('https://itunes.apple.com/us/app/redar/id892972850?ls=1&mt=8', '_blank');
+			return false;
+		}
+
+		function ChangeImageAppLinks (ios,hover) {
+			if (ios) {
+				if ( hover) {
+					document.getElementById("image_appstore").src ="images/A/btn_09.png";
+				}else{
+					document.getElementById("image_appstore").src ="images/A/btn_03.png";
+				};
+			}else{
+				if ( hover) {
+					document.getElementById("image_google_play").src ="images/A/btn_10.png";
+				}else{
+					document.getElementById("image_google_play").src ="images/A/btn_05.png";
+				};
+			};
+		}
+
+		function GoAndroid () {
+			window.open('https://play.google.com/store/apps/details?id=com.clarity.Redar', '_blank');
+			return false;
+		}
+
+	</script>
+</head>
+<body>
+	<div class="menu-button">Menu</div>
+	
+	<ul class="flexnav one-page navigation redar-menu" data-breakpoint="2000"> 
+	 	<li data-slide="1"><a class="active" >HOME</a></li>
+        <li data-slide="2"><a >ABOUT</a></li>
+        <li data-slide="3"><a >REDAR BEACON</a></li>
+        <li data-slide="4"><a >DASHBOARD</a></li>
+        <li data-slide="5"><a >PARTNERING</a></li>
+        <li data-slide="6"><a >GET IN TOUCH</a></li> 
+        <li onclick="Referrals()"><a >REFERRALS</a></li> 
+	</ul>
+	
+	<!-- <div class="rmm navigation" data-menu-style = "graphite">
+        <ul>
+            <li data-slide="1"><a class="active" >HOME</a></li>
+            <li data-slide="2"><a >ABOUT</a></li>
+            <li data-slide="3"><a >REDAR BEACON</a></li>
+            <li data-slide="4"><a >DASHBOARD</a></li>
+            <li data-slide="5"><a >PARTNERING</a></li>
+            <li data-slide="6"><a >GET IN TOUCH</a></li> 
+            <li onclick="Referrals()"><a >REFERRALS</a></li> 
+       </ul>
+	</div> -->
+
+	<div class="slide" id="slide1" data-slide="1" data-stellar-background-ratio="0">
+
+		<div class="container" style="padding-top:9.3em;">
+			<div class="row">
+
+				<div class="span3">
+					<div style="width: 368px !important;">
+						<img src="images/A/logotipo.png" alt="redar for clients" />
+					</div>
+
+					<div class="about-text" style="width: 290px ! important;margin-left:4.1em">
+						Redar <i class="tmicon">&#8482;</i>
+						, the new
+						<br />
+						Way to know, and
+						<br />
+						be in touch with
+						<br />
+						your clients
+						<br />
+					</div>
+					<div class="">
+						<div class="span3">
+							<a onmouseOver="ChangeImageAppLinks(true,true)" onClick="GoApp();"
+							onmouseOut="ChangeImageAppLinks(true,false)">
+								<img id="image_appstore" src="images/A/btn_03.png" alt="coupons" style="cursor:pointer"/>
+							</a>
+						</div>
+
+						<div class="span3" style="left: 13em;position: relative;top: -3.9em;">
+							<a onClick="GoAndroid();">
+							  <img alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_generic_rgb_wo_60.png" style="width:161px;height:55px;cursor:pointer" />
+							</a>
+						</div>
+
+					</div>
+
+					<div class="span4">
+						<div class="landing-hide" id="correo">
+							<h4 style="color:#00c189;text-align:center;">
+								Succesfully Registered Email
+							</h4>
+						</div>
+					</div>
+				</div>
+				<div class="span8">
+					<img src="images/A/A_01.png" style="margin-left:0px" class="mujerimg" alt="redar application">	
+				</div>
+			</div>
+		</div>
+		
+		<!-- Modal -->
+		<div id="app_modal" class="modal-text-all m-size modal hide fade" tabindex="-1" role="dialog"  aria-hidden="true">
+
+			<div class="modal-header modal-head-border">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<br />
+				<img src="images/A/logotipo.png" class="modal-logo" alt="modal_redar" />
+			</div>
+
+			<div class="modal-body">
+				<form method="post" id="form_app" >
+					<label class="modal-msg">
+						RECIBE NUESTRA APP
+						<br />
+						MUY PRONTO EN TU CORREO
+						<br />
+						<input type="email"  class="modal-input" placeholder="YOUR@EMAIL.COM" name="web_site_app_android_reminder[email]" id="web_site_app_android_reminder_email" required/>
+					</label>
+					
+					<button type="button" class="btn btn-primary modal-submit" onclick="SaveContactoValidacionapp();">REGISTRAR</button>
+				</form>
+			</div>
+			<div class="modal-footer"></div>
+		</div>
+	</div>
+
+	<!-- END MODAL -->
+	<!-- END SLIDE1-->
+	<!-- <a class="button" data-slide="2" title=""></a> -->
+	<!-- AQUI ES DONDE SE DETENDRA EL SLIDER-->
+	<div class="slide" id="slide2" data-slide="2" data-stellar-background-ratio="0">
+
+		<div class="border-bottom">
+			<div class="container container-blee">
+				<div class="row">
+					<div class="span6">
+						<div class="blee-image1ipad">
+							<img src="images/B/b_01.png" class="img-marginleft" alt="business intelegence"/>
+						</div>
+					</div>
+					<div class="span6">
+						<div class="espaciador-blee span5"></div>
+						<div class="blee-textall">
+							<div class="blee-tittle about-titles ipad-titles span6">What is Redar&#8482; ?</div>
+							<div class="about-subtitle span6">
+								<p>Restaurants + Rewards</p>
+							</div>
+
+							<div class="span6 text-fila3 ipad-text">
+								<p>Redar&#8482; is an innovative platform that enables you to reach clients through an effective offers-and-rewards program. With Redar&#8482; you maximize exposure by promoting your restaurant to thousands of smartphone users in your area.</p> 
+
+								<p>Gain access to a comprehensive set of tools that enables feedback, private messaging and measuring the impact of your promotions.</p>
+
+								<p>Sign up today and start creating unique and personal experiences for your customers that will keep them coming back. <p/>
+								<br />
+								<span style="font-weight:bold;">Exposure & Discoverability</span> 
+								<br />
+								<p>Redar&#8482; app combines a targeted set of data that will conveniently display the best selection of restaurants listings to its users.</p>
+
+								<p>With Redar&#8482; your restaurant gets featured with a few select others based on the time of day, location and food choices, making it easier for new customers to find you. Your restaurant's detailed information will always be available along with its current offers.</p>
+
+								<p>By offering Redar&#8482; app as a free download, we are focused on reaching the greatest possible number of clients so they can get to know about you.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container container-dashboard">
+			<div class="row">
+				<div class="span6">
+					<div class="">
+						<img src="images/C/c_01.png" class="c-image img-marginleft" alt="redar app"/>
+					</div>
+				</div>
+				<div class="text-dashall">
+					<div class="span6">
+						<div class="span6 espaciador-dash"></div>
+						<div class="titles ipad-titles">
+							PRESENCE IN THOUSAND
+							<br />
+							OF SMARTPHONES
+						</div>
+
+						<div class="text about-text2 ipad-text">
+							Showing up on internet search engines and other
+							<br />
+							traditional methods of communication is simply not
+							<br />
+							enough when your business needs that extra
+							<br />
+							oomph to grow and expand. Redar &#8482; gives you
+							<br />
+							that edge of always being there for your clients
+							<br />
+							instantly- at any moment.
+						</div>
+
+						<div class="text about-text2 ipad-text">
+							Redar &#8482; will display your estabilishments information
+							<br />
+							automatically to the user based on their current
+							<br />
+							location and preferences, marking each one of them
+							<br />
+							a potential customer.
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END SLIDER 2-->
+	<!-- <a class="button" data-slide="3" title=""></a> -->
+
+	<div class="slide" id="slide3" data-slide="3" data-stellar-background-ratio="0">
+		<div class="dashboard2all">
+			<div class="container container-blee">
+				<div class="row">
+					<div class="span6">
+						<div class="ipad-imglocation" style="padding-right:180px;" >
+							<img src="images/location/lo_01.png" class="img-marginleft" alt="beacon redar"/>
+						</div>
+					</div>
+					<div class="span6">
+						<div class="espaciador-blee span5"></div>
+						<div class="blee-textall">
+							<div class="blee-tittle ipad-titles">LOCATION AWARENESS</div>
+
+							<div class="blee-text-fila2 span6">
+								WITH BLUETOOTH LE
+								<br />
+							</div>
+
+							<div class="span6 location-text ipad-text texttops">
+								<p>Redar&#8482; Beacon (Bluetooth LE) is a new class of low-power, low-cost transmitter technology that can notify you of nearby mobile devices.</p>
+								<p>The combination of Redar&#8482; Beacon with Redar&#8482; app provides instant location awareness that enables you to customize any of the following scenarios:</p>
+							</div>
+
+							<div class="span5 location-text texttops">
+								<ul>
+									<li class="texttops">
+										<p>Welcome entering or nearby passing customers to your establishment with a special offer.</p>
+									</li>
+
+									<li class="texttops">
+										<p>Greet them and provide suggestions as they come in.</p>
+									</li>
+									<li class="texttops">
+										<p>Thank them for their business and send them an offer for their next visit.</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- <a class="button" data-slide="4" title=""></a> -->
+			</div>
+		</div>
+	</div>
+
+	<div class="slide" id="slide4" data-slide="4" data-stellar-background-ratio="0">
+		<div class="dashboard2all">
+			<div class="container">
+				<div class="row">
+					<div class="span6">
+						<div style="padding-left:7px">
+							<img src="images/customer/cu_01.png" class="d-images img-marginleft" alt="loyalty system"/>
+						</div>
+					</div>
+
+					<div class="span6 textall-dash2">
+						<div class="title-dash2 ipad-titles">Loyalty & Rewards Program</div>
+						<div class="text-dash2 ipad-text">
+							<p>Redar&#8482; makes it easy for your customers to feel valued, and rewards them for providing important feedback to your business.</p>
+
+							<p>Our platform allows you to generate targeted campaigns for pre-established client groups or individuals. Let our team of professionals support you with proven offers and reward suggestions tailored to your needs.</p>
+
+							<p>Get your loyalty program up and running within minutes by joining Redar&#8482;!</p>
+							<!-- <br /> -->
+							<!-- <span style="font-weight:bold;">Direct Client to Restaurant Feedback</span> 
+							<br />
+							<p>Redar&#8482; provides a direct and private line of messaging between you and your customers. Any direct message from a guest will trigger an alert and notification to assure that all feedback and comments are timely addressed toward a positive resolution.</p>
+							
+							<p>We at Redar&#8482; value you as a partner. Our focus is on providing you with the tools necessary for improving your customers experience discreetly and reserved from public commentary.</p> -->
+							<!-- <br /> -->
+							<!-- <span style="font-weight:bold;">Customer Satisfaction Surveys</span> 
+							<br />
+							<p>Redar&#8482; includes a powerful and customizable survey module to tap into your customers complete service experience.</p>
+							
+							<p>With its non-intrusive interface, guests can take a quick and simple exit survey by scanning their ticket code. Use our own set of recommended pre-established surveys or create your own to address specific areas of your business.</p> -->
+							<!-- <br /> -->
+							<!-- <span style="font-weight:bold;">Statistics & Analytics</span> 
+							<br />
+							<p>Redar&#8482;'s powerful back-end integrates into your business to provide the most complete set of reporting tools and indicators. Your private dashboard displays your customers' patterns and preferences in real-time allowing you to change or keep your existing offers or create new ones.</p>
+							
+							<p>Get Executive Reports e-mailed automatically so you can stay informed and make decisions at the right time. Customize reports based on your preferences or needs.</p> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slide" data-slide="3" data-stellar-background-ratio="2">
+			<!-- End Slide-->
+			<div class="dashboard2all">
+				<div class="container">
+					<div class="row">
+						<div class="span6" style="padding-left:7px">
+							<img src="images/bussiness/bi_01.png" class="img-marginleft" alt="businness intelegence">
+						</div>
+						<div class="span6 textall-dash2">
+							<div class="title-dash2 ipad-titles">BUSINESS INTELIGENCE
+							</div>
+							<div class="text-business ipad-text">
+								Redar’s feedback system is amazing. It provides you with the most complete set of reporting tools and indicators on the market  allowing you to easily evaluate the impact of your promotions & campaigns. It shows you customer patterns and preferences in a simple and intuitive interface  allowing you to change or keep your existing promotions or create new ones!
+							</div>
+
+							<!-- <div class="sub-title-dash2 ipad-titles">REPORTS</div>
+
+							<div class="text-dash2 ipad-text">
+								Redar &#8482; will give you all tools you need to generate reports
+								<br />
+								based on your needs, creating client groups to share
+								<br />
+								promotions in a direct way. For example:
+							</div>
+							<div class="li-business">
+								<ul>
+									<li>Who is celebrating a birthday this month?</li>
+									<li>Identify clients who have not visited recently.</li>
+									<li>Sort users by gender and age range.</li>
+								</ul>
+							</div>
+
+							<div class="text-dash2 ipad-text">
+								From each report, you will be able to generate personalized
+								<br />
+								campaigns for the desired client group.
+							</div>
+
+							<div class="sub-title-dash2 ipad-titles">AUTOMATIC EXECUTIVE REPORT</div>
+							<div class="text-dash2 ipad-text">
+							We also offer an Executive report e-mailed to you automatically. Customize report frequency and other  preferences so you can stay informed and make decisions in real time.
+							</div> -->
+
+							<div class="sub-title-dash2 ipad-titles">Statistics & Analytics</div>
+							<div class="text-dash2 ipad-text">
+								Redar&#8482;'s powerful back-end integrates into your business to provide the most complete set of reporting tools and indicators. Your private dashboard displays your customers' patterns and preferences in real-time allowing you to change or keep your existing offers or create new ones.
+
+								Get Executive Reports e-mailed automatically so you can stay informed and make decisions at the right time. Customize reports based on your preferences or needs.
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="dashboardground">
+				<div class="container">
+					<div class="row">
+						<div class="span6" style="padding-left:9px">
+							<img src="images/comment/co_01.png" class="img-marginleft" alt="comments redar">
+						</div>
+						<div class="span6 textall-dash2">
+							<div class="title-dash2 ipad-titles">Direct Client to Restaurant Feedback
+							</div>
+
+							<div class="text-dash2 ipad-text">
+								Redar&#8482; provides a direct and private line of messaging between you and your customers. Any direct message from a guest will trigger an alert and notification to assure that all feedback and comments are timely addressed toward a positive resolution.
+
+								We at Redar&#8482; value you as a partner. Our focus is on providing you with the tools necessary for improving your customers experience discreetly and reserved from public commentary.
+							</div>
+
+							<div class="sub-title-dash2 ipad-titles">Customer Satisfaction Surveys</div>
+
+							<div class="text-dash2 ipad-text">
+								Redar&#8482; includes a powerful and customizable survey module to tap into your customers complete service experience.
+
+								With its non-intrusive interface, guests can take a quick and simple exit survey by scanning their ticket code. Use our own set of recommended pre-established surveys or create your own to address specific areas of your business.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slide" id="slide40" data-slide="4" data-stellar-background-ratio="2">
+			<!-- Location Awarenness -->
+			<!-- <a class="button" data-slide="3" title=""></a> -->
+		</div>
+	</div>
+
+	<div class="slide" id="slide5" data-slide="5" data-stellar-background-ratio="0">
+
+		<div class="purchase-all">
+			<div class="container container-purchase-all">
+				<div class="row container-purchase">
+					<div class="span12">
+						<img src="images/F/plans.png" class="plans_image"  alt="package redar"/>
+						
+					</div>
+					<div class="row-fluid" style="text-align:center">
+						<div class="title-purchase">By partnering with Redar&#8482; you get…</div>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span12 text-dash2 ipad-text">
+							<span style="font-weight:bold;font-size:1.5em;margin-top:10px;"> Freedom </span> <br />
+							<p>Begin with Redar&#8482; Starter by joining with your one-time setup fee ($99) and no monthly payments. With Redar&#8482; there is no forced contract and you can cancel anytime.</p>
+						</div>
+					</div>
+
+					<div class="row-fluid" style="margin-top:0px;">
+						<div class="span12 text-dash2 ipad-text" style="margin-top:0px;">
+							<span style="font-weight:bold;font-size:1.5em;margin-top:10px;"> Flexibility </span> <br />
+							<p>Redar&#8482; provides you with best-of-class tools for managing and communicating with your customers. Redar&#8482;'s powerful backend lets you control campaigns by group or individually so no customer gets left behind.</p>
+						</div>
+					</div>
+
+					<div class="row-fluid" style="margin-top:0px;">
+						<div class="span12 text-dash2 ipad-text" style="margin-top:0px;">
+							<span style="font-weight:bold;font-size:1.5em;margin-top:10px;"> Scalability </span> <br />
+							<p>Whether you are starting a new restaurant or have an established chain, all Redar&#8482; plans include our full featured experience. With Redar&#8482; you pay only as your business grows.</p>
+						</div>
+					</div>
+
+					<div class="row-fluid" style="margin-top:0px;">
+						<div class="span12 text-dash2 ipad-text" style="margin-top:0px;">
+							<span style="font-weight:bold;font-size:1.5em;margin-top:10px;"> Assurance </span> <br />
+							<p>Let our team of professionals guide you with our proven loyalty and rewards strategies. Redar&#8482; exposes your business to a growing number of potential customers. With Redar&#8482; as your partner, we take care of keeping your customers coming back so you can focus on your business.</p>
+						</div>
+					</div>
+
+					<div class="row-fluid" style="margin-top:0px;">
+						<div class="span3 text-dash2 ipad-text">
+							<span style="font-weight:bold;font-size:1.5em;margin-bottom:10px;">All Redar™plans include:</span> 
+							<br>
+							<p>Customer Loyalty System</p>
+							<p>Coupon and Rewards Generator</p>
+							<p>Personalized Promotions</p>
+							<p>Group Targeted Campaigns</p>
+							<p>Location Aware Offers</p>
+							<p>Push Notifications</p>
+							<p>Social Exposure</p>
+							<p>Redar-wide Offers</p>
+							<p>Business Intelligence Reports</p>
+							<p>Periodic Executive Reports</p>
+							<p>Survey Module</p>
+							<p>Comments and Private Feedback</p>
+							<p>Phone and Chat Support</p>
+						</div>
+						<div class="span9 text-dash2 ipad-text">
+							<div class="row-fluid">
+								<div class="span4">
+									<p class="text-fila3" style="font-weight:bold;font-size:1.5em;">Starter</p>
+									<p><b>For your first 500</b><br>affiliated customers</p>
+									<p style="font-size:.7em;">FREE with your one time setup fee ($99) *<br>Additional branch setup fee ($49) *</p>
+								</div>
+								<div class="span4">
+									<p class="text-fila3" style="font-weight:bold;font-size:1.5em;">Forward</p>
+									<p><b>For 500+</b><br>affiliated customers</p>
+									<p style="font-size:.7em;">$79/month<br>Additional branch $79/month **</p>
+								</div>
+								<div class="span4">
+									<p class="text-fila3" style="font-weight:bold;font-size:1.5em;">Breakthrough</p>
+									<p><b>For 1000+</b><br>affiliated customers</p>
+									<p style="font-size:.7em;">$149/month<br>Additional branch $149/month **</p>
+								</div>
+							</div>
+							<div class="row-fluid">
+								<div class="span12">
+									<p style="font-size:.7em;">*Setup fee includes Redar™ Beacon
+									<br>**Volume pricing available</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <a class="button" data-slide="5" title=""></a> -->
+
+	<div class="slide" id="slide6" data-slide="6" data-stellar-background-ratio="0">
+
+		<div class="container-get">
+			<div class="container get-intouch">
+				<div class="row-fluid row get">
+					<div class="span6">
+						<form id="form_contacto" method="post" >
+							<div class="row-fluid">
+								<h1 style="color: #00c189;">Get in Touch</h1>
+								<br>
+							</div>
+							<div class="row-fluid">
+								<input type="text" placeholder="Your Name" class="get-textinput gets-inputstexts span12" name="web_site_contact[name]" id="web_site_contact_name" required/>
+							</div> 
+							<div class="row-fluid">
+								<input type="email" placeholder="your@email.com" class="get-textinput gets-inputstexts span12" name="web_site_contact[email]" id="web_site_contact_email" required/>
+							</div>
+							<div class="row-fluid">
+								<textarea class="get-textinput comments-input span12" name="web_site_contact[comments]" placeholder="Comments" id="web_site_contact_comments" required rows="10"></textarea>
+							</div>
+							<div class="row-fluid">
+								<div class="p-message" id="popover1" data-toggle="popover" data-placement="right" data-content="Mail has been sent successfully" title="SUCCESS">
+									<input type="submit" value="SEND" class="get-input span12" onclick="SaveContactoValidacion();"/>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="span6" style="color:#00c189;">
+						<h2 class="offset1">ADDRESS</h2>
+						<div class="row-fluid">
+							<div class="span11 offset1">
+								<div class="row-fluid">
+									<div class="span12 get-text">
+									 	<h5> USA </h5> 
+										Unika Corporate Center  <br />
+										4300 Biscayne BVD. Suite 204 <br />
+										Miami,Fl 33137 <br />
+										(561)318.1948 <br />
+										hello@redarapp.com <br />
+									</div>
+								</div>
+								<div class="row-fluid" style="margin-top:1em;">
+									<div class="span12 get-text">
+										One Boca Place  <br />
+										2255 Glades Road Suite 324A <br />
+										
+										Boca Raton, Florida 33431 <br />
+										(561)318.1948 <br />
+										hello@redarapp.com <br />
+									</div>
+								</div>
+								<div class="row-fluid">
+									<h5> Puerto Rico</h5>
+								</div>
+								<div class="row-fluid" style="margin-bottom:2em;">
+									<div class="span12 get-text">
+										San Francisco # 151 Suite 200 <br />
+										San Juan de Puerto Rico, 00901 <br />
+										(787)345.7474 <br />
+										hello@redarapp.com <br />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-get">
+		<div class="container">			
+			<div class="span12 get-final landing-footer">POWERED BY CLARITY ANALYTICS & INSIGHT &#8482; &nbsp;&nbsp;<a href="http://www.clai.mx" target="_blank">WWW.CLAI.MX</a>
+			</div>
+		</div>
+	</div>
+	<script>
+	
+	$(".flexnav").flexNav();
+	
+      
+    </script>
+</body>
+</html>
